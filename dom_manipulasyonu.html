@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipülasyonu - JS Orta Seviye</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-600">JS Orta Seviye</h1>
+      <nav class="space-x-4">
+        <a href="index.html" class="text-gray-700 hover:text-blue-600">Anasayfa</a>
+        <a href="dersler.html" class="text-gray-700 hover:text-blue-600">Dersler</a>
+        <a href="hakkimizda.html" class="text-gray-700 hover:text-blue-600">Hakkımızda</a>
+        <a href="iletisim.html" class="text-gray-700 hover:text-blue-600">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- İçerik -->
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-bold text-blue-600 mb-4">DOM Manipülasyonu</h2>
+    <p class="mb-6">DOM (Document Object Model), HTML dökümanının JavaScript ile etkileşimli olarak kullanılmasını sağlayan yapıdır. Bu bölümde DOM üzerinde nasıl seçim yapılır, içerik nasıl değiştirilir ve yeni öğeler nasıl eklenir gibi temel konulara değineceğiz.</p>
+
+    <h3 class="text-xl font-semibold text-blue-500 mt-8 mb-2">Element Seçimi</h3>
+    <pre class="bg-gray-800 text-white p-4 rounded"><code>const baslik = document.getElementById("title");
+const paragraflar = document.getElementsByClassName("text");
+const secilen = document.querySelector(".menu li:first-child");</code></pre>
+
+    <h3 class="text-xl font-semibold text-blue-500 mt-8 mb-2">İçeriği Değiştirme</h3>
+    <pre class="bg-gray-800 text-white p-4 rounded"><code>baslik.innerText = "Yeni Başlık";
+paragraf.innerHTML = "<strong>Kalın yazı</strong>";</code></pre>
+
+    <h3 class="text-xl font-semibold text-blue-500 mt-8 mb-2">Yeni Eleman Ekleme</h3>
+    <pre class="bg-gray-800 text-white p-4 rounded"><code>const yeniLi = document.createElement("li");
+yeniLi.textContent = "Yeni Menü";
+document.querySelector(".menu").appendChild(yeniLi);</code></pre>
+
+    <h3 class="text-xl font-semibold text-blue-500 mt-8 mb-2">Uygulama Önerisi</h3>
+    <p class="mb-2">Bir listeye kullanıcıdan alınan veriyi ekleyen basit bir uygulama yap. `createElement`, `appendChild`, `value` gibi özellikleri kullanmayı unutma.</p>
+  </main>
+
+  <footer class="bg-white border-t py-6 mt-12">
+    <div class="max-w-6xl mx-auto px-4 text-center text-sm text-gray-500">
+      &copy; 2025 JS Orta Seviye Dersleri. Tüm hakları saklıdır.
+    </div>
+  </footer>
+
+</body>
+</html>
